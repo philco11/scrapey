@@ -1,6 +1,7 @@
 class AlertsController < ApplicationController
   
   def index
+    @alerts = Alert.all
   end
   
   def new
@@ -13,11 +14,13 @@ class AlertsController < ApplicationController
        flash[:alert] = "Alert has been created."
        redirect_to @alert
      else
-       # nothing, yet
+       flash[:alert] = "Shit got REALLY really fucked. We lost all your data. Sorry."
      end
   end
   
   def show
     @alert = Alert.find(params[:id])
   end
+  
+
 end

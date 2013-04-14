@@ -1,4 +1,9 @@
 Scrapey::Application.routes.draw do
+
+    root :to => "alerts#index"
+    resources :alerts
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
